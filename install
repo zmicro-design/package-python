@@ -8,6 +8,7 @@ if [ "$?" != "0" ]; then
   #   sudo add-apt-repository ppa:deadsnakes/ppa
   #   sudo apt update
   #
+  pm update -y
   pm install -yqq python3
 fi
 
@@ -18,6 +19,7 @@ _pip() {
 
   python3 -m pip -h >>/dev/null 2>&1
   if [ "$?" != "0" ]; then
+    pm update -y
     pm install -yqq python3-pip
   fi
 
