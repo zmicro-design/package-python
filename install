@@ -46,11 +46,13 @@ if [ "$?" != "0" ]; then
   cat <<EOF >>$XSHRC
 
 # VIRTUALENVWRAPPER
+export PATH="\$HOME/.local/bin:\$PATH"
 export VIRTUALENVWRAPPER_PYTHON=\$(which python3)
 # Ubuntu 20
 # source $HOME/.local/bin/virtualenvwrapper.sh
 # Other
 # source $(which virtualenvwrapper.sh)
 alias workon="source \$(which virtualenvwrapper.sh) && workon"
+alias mkvirtualenv="source \$(which virtualenvwrapper.sh) && mkvirtualenv"
 EOF
 fi
